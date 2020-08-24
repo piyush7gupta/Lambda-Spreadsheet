@@ -42,7 +42,7 @@ mainfile.ml - Contain all the backend functions
 yomain.ml - Contain the code for lexing and parsing the token from input file. 
 I have written all the commands in Makefile and it gives the assignment4 as the executable file.
 
-For the last executable command I have taken the following as format as given on Piazza post 65
+To run this program first compile the makefile and then execute the following command
 ./assignment4 <csv file path> <number_of_row> number_of_col> <expression_file_path>
 
-I have assumed that there will be only one input per sheet ( instructor confirmed it in Piazza Post 67) otherwise all the instructions will be applied to the inout sheet gien initially not to the output returned in the previous command.
+I have assumed that there will be only one input per sheet otherwise all the instructions will be applied to the inout sheet gien initially not to the output returned in the previous command.
