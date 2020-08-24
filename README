@@ -1,0 +1,48 @@
+In this assignment I added the backend functions in my Mainfile.ml . In starting I have written helper function whose function I have written in comments. 
+I have written what the following functions do
+
+mkrow_index - This take the cell list , float value , index and return the cell list with the float value replaced by the index.
+mksheet_sheet - This take the sheet , float value and index and return the sheet with the float value replaced at the index.
+mksheet-row - This take sheet, float_list and index and return the sheet with the list replace as whole taking index as starting index increasing column wise used in ROWCOUNT function 
+mkrow-row - This take a 2 cell list c1 and c2 and index and placed the whole c2 in c1 taking index as the starting index.
+mksheet-col - This take a sheet ,float list and index and place the place the whole list in sheet taking the index as the starting index used in COLCOUNT.
+
+row_counter_helper - This is a helper recursive function it count the the cell in the first row and recusrive call the tail of sheet to return the foat list with the count values then using mksheet_row mad the new sheet.
+col_counter_helper - Same asrow_counter_hekper
+full_count - This iterate on the whole sheet and if the index lies in the range given then it checks the cell count and increment the count accordingly. Then used the mksheet_index with the count value.
+
+Doing some changes in the above function I made all the reamaining function for AVG,SUM , MIN, MAX.
+
+add_const_helper - It takes the cell list , float value and left and right index  and return a float list with the alues added
+add_const_helper2- It takes the sheet range and float value and using add_const_helper add the value to the range and return the flaot lis list. 
+mksheet_sheet - This take two sheet  and index and taking the second sheet as input sheet the output written to the sheet taking index as left_most_index.
+add_const- Using the add_const_helper2 anfd mksheet_sheet function it return the output wanted.
+
+Doing som changes in the above function I made all the remaining function for SUB_CONST , MULT_CONST , DIV_CONST.
+
+add_range_helper - It takes two list and then check the range compatibility and then written the float list with adding the corresponding elements.
+add_range_helper - It takes sheet and two range first it check the range compatibility and then using add_range_helper it return a cell list list with adding the corresponding elements.
+add_range - Using add_Range_helper2 and mksheet_sheet It return the sheet with output writen to the corresponding elements taking indices as the left most index.
+
+Doing som changes in the above function I made all the remaining function for SUB_RANGE , MULT_RANGE , DIV_RANGE.
+
+I have made cell type which takes empty cell as NULL and float valus as Float (f).
+I have taken sheet to be cell list list.
+I have made 3 exception Invalid_input, Range_compatibility and Null_interpreted.
+Invalid_input - If you try to access the eleement which is not present in the sheet.
+Range_compatibility - If the range given range function are not compatible.
+Null_interpreted - If you try to access the null cell in any function except to count.
+
+I have made assumption that the index given for the output will be correct otherwise my code will write to the output till the index is in sheet dimensions and remaining output will not be written.
+
+For the files I have 4 files 
+real_lexer.mll - Comtaining the lex 
+real_parser.mly - Containg the yacc code
+mainfile.ml - Contain all the backend functions
+yomain.ml - Contain the code for lexing and parsing the token from input file. 
+I have written all the commands in Makefile and it gives the assignment4 as the executable file.
+
+For the last executable command I have taken the following as format as given on Piazza post 65
+./assignment4 <csv file path> <number_of_row> number_of_col> <expression_file_path>
+
+I have assumed that there will be only one input per sheet ( instructor confirmed it in Piazza Post 67) otherwise all the instructions will be applied to the inout sheet gien initially not to the output returned in the previous command.
